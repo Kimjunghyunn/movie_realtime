@@ -34,10 +34,10 @@ def read_reviews():
 
   # 4. movie_details 반복
   for movie_detail in movie_details:
-    # 5. 개별 영화들의 평점 확인
+    # 5. 영화들의 목록을 담은 리스트
     vote_average_movies_over_8.append(movie_detail)
 
-  # 6. 평점 8 이상인 영화들의 목록을 담은 리스트를 반환한다.
+  # 6.영화들의 목록을 담은 리스트를 반환한다.
   return jsonify({'api_loading': vote_average_movies_over_8})
 
 if __name__ == '__main__':
