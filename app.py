@@ -16,7 +16,7 @@ def home():
 ## API 역할을 하는 부분
 @app.route('/test', methods=['GET'])
 def read_reviews():
-  vote_average_movies_over_8 = []
+  movie_details_list = []
   params = {
     'api_key' : service_key,
     'language' : language_kr
@@ -35,10 +35,10 @@ def read_reviews():
   # 4. movie_details 반복
   for movie_detail in movie_details:
     # 5. 영화들의 목록을 담은 리스트
-    vote_average_movies_over_8.append(movie_detail)
+    movie_details_list.append(movie_detail)
 
   # 6.영화들의 목록을 담은 리스트를 반환한다.
-  return jsonify({'api_loading': vote_average_movies_over_8})
+  return jsonify({'api_loading': movie_details_list})
 
 if __name__ == '__main__':
   app.run('0.0.0.0',port=5000,debug=True)
