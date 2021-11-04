@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    
+    <style>
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            showAPI();
+        });
+
+        function showAPI() {
+            $.ajax({
+                type: "GET",
+                url: "/test?",
+                data: {},
+                success: function (response) {
+                    let api_read = response['api_loading']
+                    console.log(api_read[0]['title'])
+                    
+                    //값 전달 테스트
+                    // let title = api_read[0]['title']
+                    // let img_url = api_read[0]['poster_path']
+                    // let overview = api_read[0]['overview']
+                    // let vote_average = api_read[0]['vote_average']
+                    // let vote_count = api_read[0]['vote_count']
+                    // console.log(title, img_url, overview, vote_average, vote_count)
+                    // console.log(api_read.length)
+
+                    //api_read.length만큼 반복하여 이름,포스터,내용,평점,투표수 등을 가져옴
+                    for (let i = 0; i < api_read.length; i++) {
+                        let title = api_read[i]['title']
+                        let img_url = api_read[i]['poster_path']
+                        let overview = api_read[i]['overview']
+                        let vote_average = api_read[i]['vote_average']
+                        let vote_count = api_read[i]['vote_count']
+                        console.log(title, img_url, overview, vote_average, vote_count)
+                        let temp_html = `<div class="card">
+                                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500${img_url}" alt="Card image cap">
+                                            <div class="card-body">
+                                                <a target="_blank" href="#" class="card-title">${title}</a>
+                                                <p class="card-text">${overview}</p>
+                                                <p class="card-text comment">${vote_average}</p>
+                                                <p class="card-text comment">${vote_count}</p>
+                                            </div>
+                                        </div>`
+                        $('#cards-box').append(temp_html)
+                    }
+                }
+            })
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="wrap">
+        <div id="cards-box" class="card-columns">
+        </div>
+    </div>
+
+</body>
+</html>
