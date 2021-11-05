@@ -11591,7 +11591,7 @@ footer.footer .social-link:hover {
   background-size: cover;
 }
 
-.masthead.bg01 { background-image: url("/images/bg01.jpg"); }
-.masthead.bg02 { background-image: url("/images/bg02.jpg"); }
-.masthead.bg03 { background-image: url("/images/bg03.jpg"); }
-.masthead.bg04 { background-image: url("/images/bg04.jpg"); }
+.masthead.bg01 { background-image: url("images/bg01.jpg"); }
+.masthead.bg02 { background-image: url("images/bg02.jpg"); }
+.masthead.bg03 { background-image: url("images/bg03.jpg"); }
+.masthead.bg04 { background-image: url("images/bg04.jpg"); }

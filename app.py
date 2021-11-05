@@ -14,7 +14,7 @@ def home():
   return render_template('index.html')
 
 ## API 역할을 하는 부분
-@app.route('/test', methods=['GET'])
+@app.route('/API', methods=['GET'])
 def read_reviews():
   movie_details_list = []
   params = {

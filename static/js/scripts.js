@@ -81,3 +81,4 @@ function fadeIn(el, display) {
 
 let randomNumber = Math.floor(Math.random() * 4) + 1;
 document.querySelector('.masthead').classList.add('bg0' + randomNumber);
+
