@@ -7361,7 +7361,8 @@ textarea.form-control-lg {
 
 .mb-1 {
   margin-bottom: 0.25rem !important;
-  background-color: rgba( 255, 255, 255, 0.5 );
+  color: rgba( 255, 255, 255, 0.9);
+  background-color: rgba( 0, 0, 0, 0.2);
 }
 
 .mb-2 {
@@ -7378,7 +7379,7 @@ textarea.form-control-lg {
 
 .mb-5 {
   margin-bottom: 3rem !important;
-  background-color: rgba( 255, 255, 255, 0.5 );
+  background-color: rgba( 255, 255, 255, 0 );
 }
 
 .mb-auto {
@@ -11490,7 +11491,7 @@ footer.footer .social-link:hover {
 }
 @media (min-width: 992px) {
   .masthead {
-    height: 100vh;
+    height: 70vh;
   }
   .masthead h1, .masthead .h1 {
     font-size: 5.5rem;
@@ -11590,8 +11591,3 @@ footer.footer .social-link:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.masthead.bg01 { background-image: url("images/bg01.jpg"); }
-.masthead.bg02 { background-image: url("images/bg02.jpg"); }
-.masthead.bg03 { background-image: url("images/bg03.jpg"); }
-.masthead.bg04 { background-image: url("images/bg04.jpg"); }

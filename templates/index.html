@@ -21,41 +21,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
+        
+        <!--배너 백그라운드 사진-->
+        <style>
+            .masthead.bg01 { background-image: url("static/images/bg01.jpg"); }
+            .masthead.bg02 { background-image: url("static/images/bg02.jpg"); }
+            .masthead.bg03 { background-image: url("static/images/bg03.jpg"); }
+            .masthead.bg04 { background-image: url("static/images/bg04.jpg"); }
+        </style>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                showAPI();
-            });
-
-            function showAPI() {
-                $.ajax({
-                    type: "GET",
-                    url: "/API?",
-                    data: {},
-                    success: function (response) {
-                        let api_read = response['api_loading']
-
-                        //api_read.length만큼 반복하여 이름,포스터,내용,평점,투표수 등을 가져옴
-                        for (let i = 0; i < 4; i++) {
-                            let title = api_read[i]['title']
-                            let img_url = api_read[i]['poster_path']
-                            //console.log(title, img_url)
-                            let temp_html = `<div class="col-lg-6">
-                                                <a class="portfolio-item" href="#!">
-                                                    <div class="caption">
-                                                        <div class="caption-content">
-                                                            <div class="h2">${title}</div>
-                                                        </div>
-                                                    </div>
-                                                    <img class="img-fluid" src="https://image.tmdb.org/t/p/original${img_url}" alt="..." />
-                                                </a>
-                                            </div>`
-                            $('#row_gx_0').append(temp_html)
-                        }
-                    }
-                })
-            }
-        </script>
 
     </head>
     <body id="page-top">
@@ -66,24 +40,22 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Start Bootstrap</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                <li class="sidebar-nav-item"><a href="#Movies">Movies</a></li>                
                 <li class="sidebar-nav-item"><a href="#services">Services</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
-                    <h1 class="mb-1">Today's Box office</h1>
-                    <h3 class="mb-5"><em></em></h3>
+                    <h1 class="mb-1">Dal'Gonna Box office</h1>
+                    <!-- <h3 class="mb-5"><em>안녕하세요 저희 사이트는 인기 영화 순위 4위까지 보여줍니다.</em></h3> -->
                     <!--<a class="btn btn-primary btn-xl" href="#about">Find Out More</a>-->
             </div>
         </header>
 
         <!-- Portfolio-->
-        <section class="content-section" id="portfolio">
+        <section class="content-section" id="movies">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
                     <h3 class="text-secondary mb-0">Up to date</h3>
@@ -146,18 +118,18 @@
                     <h2 class="mb-5">Relatives</h2>
                 </div>
                 <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
+                    <div class="col-lg-3 col-md-6">
+                        <a target="_blank" href="https://www.cgv.co.kr/"><span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span></a>
                         <h4><strong>CGV</strong></h4>
                         <p class="text-faded mb-0">Looks great on any screen size!</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
-                        <h4><strong>Mega Box</strong></h4>
+                    <div class="col-lg-3 col-md-6">
+                        <a target="_blank" href="https://www.megabox.co.kr/"><span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span></a>
+                        <h4><strong>MegaBox</strong></h4>
                         <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
+                    <div class="col-lg-3 col-md-6">
+                        <a target="_blank" href="https://www.lottecinema.co.kr/NLCHS"><span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span></a>
                         <h4><strong>Lotte Cinema</strong></h4>
                         <p class="text-faded mb-0">
                             Millions of users
@@ -166,8 +138,8 @@
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                        <h4><strong>Rotten Tomatos</strong></h4>
+                        <a target="_blank" href="https://spartacodingclub.kr/"><span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span></a>
+                        <h4><strong>SPARTA</strong></h4>
                         <p class="text-faded mb-0">I mustache you a question...</p>
                     </div>
                 </div>
@@ -197,7 +169,7 @@
                         <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
                     </li>
                 </ul>
-                <p class="text-muted small mb-0">Copyright &copy; Your Website 2021</p>
+                <p class="text-muted small mb-0">Copyright &copy; Making challenge 3Team Dal'Gonna make</p>
             </div>
         </footer>
         
