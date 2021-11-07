@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Stylish Portfolio - Start Bootstrap Template</title>
+        <title>portfolio - Start Bootstrap Template</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
         <!-- Font Awesome icons (free version)-->
@@ -15,13 +16,16 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">;
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
         <!-- JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <!--Modal-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
         <!--배너 백그라운드 사진-->
         <style>
             .masthead.bg01 { background-image: url("static/images/bg01.jpg"); }
@@ -45,23 +49,40 @@
             </ul>
         </nav>
 
+        <!-- Modal 기본폼-->
+        <div id="modal-form" class="modal">
+            <div class="cards-box">
+                <div class="card">
+                        <div class="card-body">
+                                <div style="background-image: url('https://image.tmdb.org/t/p/original${backdrop_path}');">
+                                    <a target="_blank" href="#" class="card-title">${title}</a>
+                                        <p class="card-text">${director}</p>
+                                        <p class="card-text">${overview}</p>
+                                        <p class="card-text comment">${vote_count}</p>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+                
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
-                    <h1 class="mb-1">Dal'Gonna Box office</h1>
+                    <h1 class="mb-1" id="popup_open_btn">Dal'Gonna Box office</h1>
                     <!-- <h3 class="mb-5"><em>안녕하세요 저희 사이트는 인기 영화 순위 4위까지 보여줍니다.</em></h3> -->
                     <!--<a class="btn btn-primary btn-xl" href="#about">Find Out More</a>-->
             </div>
         </header>
-
+       
         <!-- Portfolio-->
         <section class="content-section" id="movies">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Up to date</h3>
+                    <h3 class="text-secondary mb-0>Up to date</h3>
                     <h2 class="mb-5">Movies</h2>
                 </div>
                 <div class="row gx-0" id="row_gx_0">
+                
                     <!-- <div class="col-lg-6">
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
@@ -150,7 +171,7 @@
         <section class="content-section bg-primary text-white">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-                <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
+                <a class="btn btn-xl btn-light me-4" id="for_test" href="#!">Click Me!</a>
                 <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
             </div>
         </section>
@@ -181,5 +202,6 @@
         <script src="{{ url_for('static', filename='js/scripts.js') }}" > </script>
         <!-- jQuery cdn -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    
     </body>
 </html>

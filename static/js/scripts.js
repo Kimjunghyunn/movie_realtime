@@ -88,6 +88,8 @@ $(document).ready(function () {
     showAPI();
 });
 
+
+
 function showAPI() {
     $.ajax({
         type: "GET",
@@ -101,10 +103,10 @@ function showAPI() {
                 let title = api_read[i]['title']
                 let img_url = api_read[i]['poster_path']
                 //console.log(title, img_url)
-                let temp_html = `<div class="col-lg-6">
-                                    <a class="portfolio-item" href="#!">
+                let temp_html = `<div id="popup_open_btn">
+                                    <a class="portfolio-item" href="#modal-form" rel="modal:open">
                                         <div class="caption">
-                                            <div class="caption-content">
+                                            <div class="caption-content" >
                                                 <div class="h2">${title}</div>
                                             </div>
                                         </div>
