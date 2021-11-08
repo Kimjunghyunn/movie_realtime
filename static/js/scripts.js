@@ -104,7 +104,7 @@ function showAPI() {
                 let title = api_read[i]['title']
                 let img_url = api_read[i]['poster_path']
                 let posternum = i
-                let temp_html = `<div class="container_poster" id="popup_open_btn" >
+                let temp_html = `<div class="col-lg-6" >
                                     <a class="portfolio-item" href="#modal-form-${posternum}" rel="modal:open" >
                                         <div class="caption">
                                             <div class="caption-content" >
