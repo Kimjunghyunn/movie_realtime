@@ -11592,3 +11592,59 @@ footer.footer .social-link:hover {
   background-size: cover;
 }
 
+
+.modal {
+  display: none; /* Hidden by default */
+  position: relative; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 700px; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,25,25); /* Fallback color */
+  background-color: rgba(0,25,25,0.4); /* Black w/ opacity */
+  color: black;
+  text-shadow: 1px 1px 1px #000;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.poster {
+  position: relative;
+  max-width: 440px;
+  max-height: 1000px;
+}
+
+.content_card {
+  display: table-cell;
+  
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%; /* Full width */
+  height: 500px; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color: grey;
+}
+
+/* Modal Content/Box */
+.content_card {
+  background-color: #fefefe;
+  margin: 0 5%; /* 15% from the top and centered */
+  padding: 0px;
+  border: 0px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.modal_background {
+  width: 440px;
+  height: 780px;
+  position: relative;
+  display: table-cell; table-layout:fixed;
+}

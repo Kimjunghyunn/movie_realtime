@@ -141,8 +141,10 @@ function showAPI() {
                                 if (crews_job == 'Director') {
                                     let director = crews_name 
                                     let temp_html2 = `
-                                                    <div class="modal_background" style="background-image: url('https://image.tmdb.org/t/p/original${backdrop_path}');">
-                                                        <div class="content_card">
+                                                <div class="modal_background">
+                                                
+                                                    <div class="content_card">
+                                                            <img class="poster" src="https://image.tmdb.org/t/p/original${backdrop_path}" alt="movie poster">
                                                             <p class="card-text">${title}</p>
                                                             <p class="card-text">${director}</p>
                                                             <p class="card-text">${vote_average}</p>
@@ -160,3 +162,8 @@ function showAPI() {
     })
 }
 
+$("#sticky").modal({
+    escapeClose: false,
+    clickClose: false,
+    showClose: false
+  });
