@@ -11573,15 +11573,15 @@ footer.footer .social-link:hover {
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
+
 .container {
   position: relative;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
-  background-size: 1920px 1280px;
   top: -50px;
-
 }
+
 .img_box {
   width: 1200px;
   height: 800px;
@@ -11591,5 +11591,4 @@ footer.footer .social-link:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 

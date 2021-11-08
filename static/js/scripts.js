@@ -90,6 +90,7 @@ $(document).ready(function () {
 
 
 
+
 function showAPI() {
     $.ajax({
         type: "GET",
@@ -102,19 +103,60 @@ function showAPI() {
             for (let i = 0; i < api_read.length; i++) {
                 let title = api_read[i]['title']
                 let img_url = api_read[i]['poster_path']
-                //console.log(title, img_url)
-                let temp_html = `<div id="popup_open_btn">
-                                    <a class="portfolio-item" href="#modal-form" rel="modal:open">
+                let posternum = i
+                let temp_html = `<div class="container_poster" id="popup_open_btn" >
+                                    <a class="portfolio-item" href="#modal-form-${posternum}" rel="modal:open" >
                                         <div class="caption">
                                             <div class="caption-content" >
-                                                <div class="h2">${title}</div>
                                             </div>
                                         </div>
                                         <img class="img-fluid" src="https://image.tmdb.org/t/p/original${img_url}" alt="..." />
                                     </a>
                                 </div>`
                 $('#row_gx_0').append(temp_html)
+                
+
+                let overview = api_read[i]['overview']
+                let backdrop_path = api_read[i]['backdrop_path']
+                let vote_average = api_read[i]['vote_average']
+                
+                //배우, 감독 부르는 url 생성하기
+                //해당 영화 고유값 불러오기
+                
+                let movie_id_give = api_read[i]['id']
+                let movie_id_give_url = 'https://api.themoviedb.org/3/movie/' + movie_id_give + '/credits?api_key=b3574ad4d1429f3dd3841d2b6658110d'
+                
+                $.ajax({
+                        type: "GET",
+                        url: movie_id_give_url,
+                        data: {},
+                        success: function (response) {
+                            
+                            let api_credit_read = response['crew']
+                            
+                            // 제작진 중에서 직책이 감독인 사람 찾기
+                            for (let i = 0; i < api_credit_read.length; i++) {
+                                let crews_job = api_credit_read[i]['job']
+                                let crews_name = api_credit_read[i]['name']
+                                if (crews_job == 'Director') {
+                                    let director = crews_name 
+                                    let temp_html2 = `
+                                                    <div class="modal_background" style="background-image: url('https://image.tmdb.org/t/p/original${backdrop_path}');">
+                                                        <div class="content_card">
+                                                            <p class="card-text">${title}</p>
+                                                            <p class="card-text">${director}</p>
+                                                            <p class="card-text">${vote_average}</p>
+                                                            <p class="card-text">${overview}</p>
+                                                        </div>
+                                                    </div>`
+                                    $('#modal-form-'+posternum).append(temp_html2)                
+                            }
+                        }
+                    }
+
+                })
             }
         }
     })
 }
+

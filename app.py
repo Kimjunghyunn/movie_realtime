@@ -41,4 +41,5 @@ def read_reviews():
   return jsonify({'api_loading': movie_details_list})
 
 if __name__ == '__main__':
-  app.run('0.0.0.0',host="192.168.35.109",port=5000,debug=True)
+  app.run('0.0.0.0',port=5000,debug=True)
+# host="192.168.35.109"
