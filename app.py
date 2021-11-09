@@ -6,6 +6,10 @@ app = Flask(__name__)
 url = "https://api.themoviedb.org/3/movie/popular"
 service_key = "b3574ad4d1429f3dd3841d2b6658110d"
 language_kr = "ko"
+params = {
+  'api_key' : service_key,
+  'language' : language_kr
+}
 
 
 # HTML을 주는 부분
@@ -17,11 +21,7 @@ def home():
 @app.route('/API', methods=['GET'])
 def read_reviews():
   movie_details_list = []
-  params = {
-    'api_key' : service_key,
-    'language' : language_kr
-  }
-  
+
   # 1.TMDB API url과 KEY 합치기
   res = requests.get(url=url, params=params)
   print(res.status_code,res.url)
@@ -41,5 +41,5 @@ def read_reviews():
   return jsonify({'api_loading': movie_details_list})
 
 if __name__ == '__main__':
-  app.run(host="192.168.35.109",port=5000,debug=True)
+  app.run('0.0.0.0', port=5000, debug=True)
 # host="192.168.35.109"

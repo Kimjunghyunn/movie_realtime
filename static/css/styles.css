@@ -1389,7 +1389,7 @@ progress {
 
   .col-lg-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 25%;
   }
 
   .col-lg-7 {
@@ -11620,7 +11620,6 @@ footer.footer .social-link:hover {
 
 .content_card {
   display: table-cell;
-  
   vertical-align: middle;
   top: 0;
   left: 0;
@@ -11631,6 +11630,7 @@ footer.footer .social-link:hover {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   color: grey;
+  font-family: 'Noto Serif KR', serif;
 }
 
 /* Modal Content/Box */
