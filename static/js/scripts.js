@@ -144,12 +144,17 @@ function showAPI() {
                                 let director = crews_name
                                 let temp_html2 = `<div class="modal_background">
                                                         <div class="content_card">
+                                                            <hr>
                                                             <img class="poster" src="https://image.tmdb.org/t/p/original${backdrop_path}" alt="movie poster">
-                                                            <p class="card-text">${title}</p>
+                                                            <hr>
+                                                            <h3 class="card-text">${title}</h3>
+                                                            <br>
                                                             <p class="card-text">감독 : ${director}</p>
-                                                            <p class="card-text">평점 : ${vote_average}</p>
+                                                            <p class="card-text">평점 : ${vote_average} / 10</p>
+                                                            <hr>
                                                             <p class="card-text">< 줄거리 >
                                                             <p class="card-text">${overview}</p>
+                                                            <hr>
                                                         </div>
                                                     </div>`
                                                     
@@ -164,6 +169,16 @@ function showAPI() {
     })
 }
 
+//modal option
+$.modal.defaults = {
+    showClose: false,        // Shows a (X) icon/link in the top-right corner
+    escapeClose: true,      // Allows the user to close the modal by pressing `ESC`
+    clickClose: true,       // Allows the user to close the modal by clicking the overlay
+    fadeDuration: 500,     // Number of milliseconds the fade transition takes (null means no transition)
+    fadeDelay: 0.7          // Point during the overlay's fade-in that the modal begins to fade in (.5 = 50%, 1.5 = 150%, etc.)
+};
+
+//??
 $("#sticky").modal({
     escapeClose: false,
     clickClose: false,
